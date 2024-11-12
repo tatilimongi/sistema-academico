@@ -6,10 +6,10 @@ function determinarStatus(up1, up2){
         return "Reprovado por média"
     }
     else if (media >= 6.0){
-        return "Aprovado por media";
+        return "Aprovado por média";
     }
     else{
-        return "Aguadando a final"
+        return "Aguardando a final"
     }
 }
 
