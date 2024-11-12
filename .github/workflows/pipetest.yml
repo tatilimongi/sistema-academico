@@ -24,5 +24,8 @@ jobs:
       - name: Instalar dependências
         run: npm install
 
+      - name: Conceder permissões de execução para todos os scripts (se necessário)
+        run: chmod +x ./node_modules/.bin/*
+
       - name: Rodar testes
         run: npm test
