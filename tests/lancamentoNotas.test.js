@@ -1,24 +1,22 @@
-const { lancarNotas } = require('../lancamentoNotas'); 
+const { lancarNotas } = require("../lancamentoNotas");
 
-describe('Função lancarNotas', () => {
-  test('Deve retornar um objeto com as notas lançadas', () => {
-    // Testando se a função retorna as notas corretamente
-    const notas = lancarNotas(8, 6);
-
-    // Verificando se o objeto retornado tem os valores corretos da up1 e up2 
-    expect(notas).toEqual({ up1: 8, up2: 6 });
+describe("Suíte de testes para a função de lancarNotas", () => {
+  test("Notas válidas da UP1 e UP2", () => {
+    expect(lancarNotas(7.5, 8.2)).toEqual({ up1: 7.5, up2: 8.2 });
   });
-
-  test('Deve retornar notas numéricas', () => {
-    // Verificando se as notas são numéricas
-    const notas = lancarNotas(7, 5);
-    expect(typeof notas.up1).toBe('number');
-    expect(typeof notas.up2).toBe('number');
+  test("Nota da UP1 fora do intervalo", () => {
+    expect(() => lancarNotas(-1.0, 8.2)).toThrow("Nota da UP1 inválida");
   });
-
-  test('Deve lançar notas negativas', () => {
-    // Testando a função com notas negativas
-    const notas = lancarNotas(-5, -8);
-    expect(notas).toEqual({ up1: -5, up2: -8 });
+  test("Nota da UP2 fora do intervalo", () => {
+    expect(() => lancarNotas(7.5, 12.0)).toThrow("Nota da UP2 inválida");
+  });
+  test("Nota da UP1 com mais de uma casa decimal", () => {
+    expect(() => lancarNotas(7.567, 8.2)).toThrow("Nota da UP1 inválida");
+  });
+  test("Nota da UP2 com mais de uma casa decimal", () => {
+    expect(() => lancarNotas(7.5, 8.256)).toThrow("Nota da UP2 inválida");
+  });
+  test("Entradas não numéricas", () => {
+    expect(() => lancarNotas("sete", 8.2)).toThrow("Entradas devem ser numéricas");
   });
 });
