@@ -76,10 +76,27 @@ try {
 }
 ```
 
-## Tecnologias Utilizadas
+## Integração Contínua com GitHub Actions
 
-- **Node.js**
-- **Jest**: Framework de testes para JavaScript
+Este projeto utiliza o GitHub Actions para garantir a qualidade e integridade do código por meio de testes automatizados. Sempre que houver um novo **commit** ou **pull request** na branch `main`, o fluxo de CI é executado automaticamente para verificar se todos os testes passam com sucesso.
+
+### Como funciona:
+
+- **Pull Requests:** Quando você cria ou atualiza um pull request direcionado à branch `main`, o GitHub Actions executa automaticamente todos os testes definidos no projeto para garantir que o novo código não quebre funcionalidades existentes.
+- **Commits:** A cada novo commit na branch `main`, o GitHub Actions valida o código e executa os testes para garantir que o código integrado esteja funcionando como esperado.
+
+### Benefícios:
+
+- **Detecção rápida de erros:** Testes automatizados são executados em cada mudança de código, identificando falhas de forma rápida e eficiente.
+- **Processo de integração ágil:** Reduz o risco de bugs e falhas no código ao integrar continuamente as mudanças feitas no repositório.
+- **Melhor colaboração:** Assegura que todos os colaboradores estejam submetendo código de alta qualidade, sem que erros se acumulem antes da revisão.
+
+Este processo de integração contínua é fundamental para manter a consistência e a confiança no código à medida que o projeto cresce.
+
+## Tecnologias Utilizadas
+- Node.js: Ambiente de execução JavaScript para o backend do projeto.
+- Jest: Framework de testes para JavaScript, utilizado para garantir a qualidade do código por meio de testes automatizados.
+- GitHub Actions: Ferramenta de integração contínua (CI) para automatizar a execução de testes sempre que houver um novo commit ou pull request, assegurando que o código permaneça livre de erros.
 
 ## Integrantes do Grupo
 - João Victor Melo
